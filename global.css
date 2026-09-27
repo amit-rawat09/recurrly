@@ -43,9 +43,9 @@
     @apply size-12 items-center justify-center;
   }
 
-  .tabs-pill {
-    @apply size-12 items-center justify-center rounded-full bg-transparent;
-  }
+.tabs-pill {
+  @apply size-12 flex-row items-center justify-center rounded-full bg-transparent;
+}
 
   .tabs-active {
     @apply bg-accent;
