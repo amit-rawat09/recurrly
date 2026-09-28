@@ -1,6 +1,7 @@
 import { SplashScreen, Stack } from "expo-router";
 import { ClerkProvider } from "@clerk/expo";
 import { tokenCache } from "@clerk/expo/token-cache";
+import { SubscriptionsProvider } from "../lib/subscriptions-context";
 import "../global.css";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
@@ -32,10 +33,12 @@ export default function RootLayout() {
   }
   return (
     <ClerkProvider publishableKey={publishableKey!} tokenCache={tokenCache}>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="(auth)" />
-      </Stack>
+      <SubscriptionsProvider>
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="(auth)" />
+        </Stack>
+      </SubscriptionsProvider>
     </ClerkProvider>
   );
 }

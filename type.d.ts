@@ -20,6 +20,7 @@ declare global {
         category?: string;
         paymentMethod?: string;
         status?: string;
+        frequency?: string;
         startDate?: string;
         price: number;
         currency?: string;
